@@ -6,5 +6,5 @@ public interface Element
 	
 	public String getText();
 	
-//	public void accept(Visitor v);
+	public void accept(Visitor v);
 }
