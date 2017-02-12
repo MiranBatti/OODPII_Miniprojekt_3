@@ -27,7 +27,7 @@ public class ToMarkdownConverter extends TextConverter
 			switch (er.toString())
 			{
 				case "heading" :
-					markdownText.append("*").append(tmp).append("\n");
+					markdownText.append("*").append(tmp).append("\n=======\n");
 					break;
 				case "paragraph" :
 					markdownText.append("*").append(tmp).append("\n");

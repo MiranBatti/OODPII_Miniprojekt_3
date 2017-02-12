@@ -12,7 +12,7 @@ public class Main
 		List<Element> listOfTableElements = new ArrayList<Element>();
 		List<Element> listOfBulletListElements = new ArrayList<Element>();
 		
-		converter = document.getConverter("html");
+		converter = document.getConverter("latex");
 		
 		converter.preamble();
 		converter.addHeader(converter.getElementFactory().createHeading("This is a heading"));

@@ -31,7 +31,7 @@ public class MarkdownElementFactory extends ElementFactory
 	public BulletList createBulletList(String text)
 	{
 		// TODO Auto-generated method stub
-		return null;
+		return new BulletList(text);
 	}
 
 	@Override
