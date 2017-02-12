@@ -63,13 +63,13 @@ public class ToHTMLConverter extends TextConverter
 	@Override
 	public void preamble()
 	{
-		htmlText.append("<html>");
+		htmlText.append("<html>\n");
 	}
 
 	@Override
 	public void postamble()
 	{
-		htmlText.append("</html>");
+		htmlText.append("</html>\n");
 	}
 
 	@Override
