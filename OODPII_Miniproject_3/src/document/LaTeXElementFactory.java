@@ -20,15 +20,13 @@ public class LaTeXElementFactory extends ElementFactory
 	@Override
 	public Heading createHeading(String text)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return new Heading(text);
 	}
 
 	@Override
 	public Paragraph createParagraph(String text)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return new Paragraph(text);
 	}
 
 	@Override

@@ -1,48 +1,87 @@
 package document;
 
+import java.util.List;
+
 public class ToHTMLConverter extends TextConverter
 {
-
+	private StringBuilder htmlText = new StringBuilder();
+	
 	@Override
-	public void addHeader()
+	public void addHeader(Element e)
 	{
-		// TODO Auto-generated method stub
-		
+		htmlText.append("<h>").append(e.getText()).append("</h>\n");
 	}
 
 	@Override
-	public void addParagraph()
+	public void addParagraph(Element e)
 	{
-		// TODO Auto-generated method stub
-		
+		htmlText.append("<p>").append(e.getText()).append("</p>\n");
 	}
 
 	@Override
-	public void addBulletList()
+	public void addBulletList(List<Element> e)
 	{
-		// TODO Auto-generated method stub
-		
+		htmlText.append("<ul>\n");
+		for (Element er : e)
+		{
+			String tmp = er.getText();
+			switch (er.toString())
+			{
+				case "heading" :
+					htmlText.append("<h>").append(tmp).append("</h>\n");
+					break;
+				case "paragraph" :
+					htmlText.append("<p>").append(tmp).append("</p>\n");
+				default :
+					break;
+			}
+		}
+		htmlText.append("</ul>\n");
 	}
 
 	@Override
-	public void addTable()
+	public void addTable(List<Element> e)
 	{
-		// TODO Auto-generated method stub
-		
+		htmlText.append("<table>\n");
+		for (Element er : e)
+		{
+			String tmp = er.getText();
+			switch (er.toString())
+			{
+				case "heading" :
+					htmlText.append("<h>").append(tmp).append("</h>\n");
+					break;
+				case "paragraph" :
+					htmlText.append("<p>").append(tmp).append("</p>\n");
+				default :
+					break;
+			}
+		}
+		htmlText.append("</table>\n");
 	}
 
 	@Override
 	public void preamble()
 	{
-		// TODO Auto-generated method stub
-		
+		htmlText.append("<html>");
 	}
 
 	@Override
 	public void postamble()
 	{
-		// TODO Auto-generated method stub
-		
+		htmlText.append("</html>");
+	}
+
+	@Override
+	public String getConvertedText()
+	{
+		return htmlText.toString();
+	}
+
+	@Override
+	public ElementFactory getElementFactory()
+	{
+		return HTMLElementFactory.getInstance();
 	}
 
 }

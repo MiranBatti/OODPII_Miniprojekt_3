@@ -2,17 +2,22 @@ package document;
 
 public class Table implements Element
 {
-
+	StringBuilder text = new StringBuilder();
+	
+	
+	public Table(String text)
+	{
+		this.text.append("text");
+	}
+	
 	@Override
 	public void addElement(Element element) {
-		// TODO Auto-generated method stub
-		
+		text.append(element.getText());
 	}
 
 	@Override
 	public String getText() {
-		// TODO Auto-generated method stub
-		return null;
+		return text.toString();
 	}
 
 	@Override

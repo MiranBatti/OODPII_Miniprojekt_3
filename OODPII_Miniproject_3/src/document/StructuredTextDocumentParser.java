@@ -2,11 +2,19 @@ package document;
 
 public class StructuredTextDocumentParser implements Visitor
 {
-	private PlainTextDocument plainTextDocument;
+	private StructuredTextDocument structuredTextDocument;
+	private Element e;
+	private TextConverter converter;
 	
-	public StructuredTextDocumentParser(PlainTextDocument plainTextDocument)
+	public StructuredTextDocumentParser()
 	{
-		this.plainTextDocument = plainTextDocument;
+	}
+	
+	public void parseDocument()
+	{
+		for (Element e : structuredTextDocument.getElementList())
+		{
+		}
 	}
 
 	@Override

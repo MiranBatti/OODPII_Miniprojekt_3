@@ -1,32 +1,30 @@
 package document;
 
-public class MarkupElementFactory extends ElementFactory
+public class MarkdownElementFactory extends ElementFactory
 {
-	private static MarkupElementFactory instance = null;
+	private static MarkdownElementFactory instance = null;
 	
-	protected MarkupElementFactory()
+	protected MarkdownElementFactory()
 	{
 	}
 	
-	public static MarkupElementFactory getInstance()
+	public static MarkdownElementFactory getInstance()
 	{
 		if(instance == null)
-			instance = new MarkupElementFactory();
+			instance = new MarkdownElementFactory();
 		return instance;
 	}
 	
 	@Override
 	public Heading createHeading(String text)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return new Heading(text);
 	}
 
 	@Override
 	public Paragraph createParagraph(String text)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return new Paragraph(text);
 	}
 
 	@Override

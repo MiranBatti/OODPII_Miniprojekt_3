@@ -2,23 +2,35 @@ package document;
 
 public class Heading implements Element
 {
-
+	StringBuilder text = new StringBuilder();
+	
+	public Heading(String text) 
+	{
+		this.text.append(text);
+	}
+	
 	@Override
-	public void addElement(Element element) {
-		// TODO Auto-generated method stub
-		
+	public void addElement(Element element)
+	{
 	}
 
 	@Override
-	public String getText() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getText()
+	{
+		return text.toString();
 	}
 
 	@Override
-	public void accept(Visitor v) {
+	public void accept(Visitor v) 
+	{
 		// TODO Auto-generated method stub
 		
+	}
+	
+	@Override
+	public String toString()
+	{
+		return "heading";
 	}
 
 }

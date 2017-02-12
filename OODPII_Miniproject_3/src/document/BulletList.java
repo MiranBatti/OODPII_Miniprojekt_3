@@ -2,7 +2,13 @@ package document;
 
 public class BulletList implements Element
 {
-
+	StringBuilder text = new StringBuilder();
+	
+	public BulletList(String text)
+	{
+		this.text.append("text");
+	}
+	
 	@Override
 	public void addElement(Element element) {
 		// TODO Auto-generated method stub
@@ -11,8 +17,7 @@ public class BulletList implements Element
 
 	@Override
 	public String getText() {
-		// TODO Auto-generated method stub
-		return null;
+		return text.toString();
 	}
 
 	@Override

@@ -1,34 +1,46 @@
 package document;
 
+import java.util.List;
+
 public class ToMarkdownConverter extends TextConverter
 {
+	private StringBuilder markdownText = new StringBuilder();
 
 	@Override
-	public void addHeader()
+	public void addHeader(Element e)
 	{
-		// TODO Auto-generated method stub
-		
+		markdownText.append(e.getText()).append("\n=======\n");
 	}
 
 	@Override
-	public void addParagraph()
+	public void addParagraph(Element e)
 	{
-		// TODO Auto-generated method stub
-		
+		markdownText.append(e.getText()).append("\n");
 	}
 
 	@Override
-	public void addBulletList()
+	public void addBulletList(List<Element> e)
 	{
-		// TODO Auto-generated method stub
-		
+		for (Element er : e)
+		{
+			String tmp = er.getText();
+			switch (er.toString())
+			{
+				case "heading" :
+					markdownText.append("*").append(tmp).append("\n");
+					break;
+				case "paragraph" :
+					markdownText.append("*").append(tmp).append("\n");
+				default :
+					break;
+			}
+		}
 	}
 
 	@Override
-	public void addTable()
+	public void addTable(List<Element> e)
 	{
-		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -43,6 +55,18 @@ public class ToMarkdownConverter extends TextConverter
 	{
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public String getConvertedText()
+	{
+		return markdownText.toString();
+	}
+
+	@Override
+	public ElementFactory getElementFactory()
+	{
+		return MarkdownElementFactory.getInstance();
 	}
 
 }
